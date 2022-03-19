@@ -24,14 +24,16 @@ def transaction_successful(money, cost_coffee):
         print(f"Here is ${change} in change.")
         global cost
         cost += cost_coffee
+        return True
     else:
         print("Sorry that's not enough money.")
+        return False
 
 
-def make_coffee(drink_name, order_ingredients):
-    for item in order_ingredients:
-        resources[item] -= order_ingredients[item]
-    print(f"Here is your{drink_name} ☕")
+def make_coffee(drink_name, order_resources):
+    for item in order_resources:
+        resources[item] -= order_resources[item]
+    print(f"Here is your {drink_name} ☕ ")
 
 while start:
     choice = input("What you would like? (espresso/latte/cappuccino): ")
